@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF">
+    <title>Угадайка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row game-card align-items-center">
+        <div class = "card-outline text-center" >            
+            <button class="btn btn-primary col-md-5 offset-md-0" type="button" data-bs-toggle="modal" data-bs-target="#Border"> НАЧАТЬ ИГРУ &#8635;</button>   
+        </div>  
+
+        
+        <!-- Modal2-->
+<div class="modal fade" id="Border" tabindex="-1" area-lebelledby="Borderlebel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h3 class="modal-title text-center " id="Borderlebel">Укажи диапазон. Загадай число. И я угадаю!</h3>
+                <button class="btn-close" data-bs-dismiss="modal" area-label="close"></button>
+            </div>
+            <div class="madal-body">
+                <form action="">
+                    <div class="row mb-3">
+                        <label for="inputNumber1" class="col-sm-2 col-form-label text-center" > MIN граница</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="-999" max="999" class="form-control my-3" id="inputNumber1" placeholder="-999">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputNumber2" class="col-sm-2 col-form-label text-center"> MAX граница</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="-999" max="999" class="form-control my-3" id="inputNumber2" placeholder="999">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="madal-footer">
+            <button class="btn btn-warning col-md-4" data-bs-dismiss="modal" id="Install1">No Game</button>
+            <button class="btn btn-danger col-md-7 mx-3" data-bs-dismiss="modal" id="Install" >Установить и Go</button>
+            </div>
+        </div> 
+    </div>
+</div>        <!-- Modal2--> 
+<div class="d-inline p-2 bg-secondary text-white text-center">Нижняя грница диапазона :  <span id="minBorder">   Установи</span></div>
+<div class="d-inline p-2 bg-dark text-white text-center">Верхняя граница диапазона :  <span id="maxBorder">  Установи</span></div>
+        <div class="col col-md-6 offset-md-3">  
+                 
+            <div class="card text-center ">            
+                    
+                <div class="card-header bg-info">
+                      <p class="m-0">Вопрос №<span id="orderNumberField"></span></p>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3 class="card-title m-0"><span id="answerField">Для игры  нажмите кнопку cверху!</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="btn-group">
+                        <button class="btn btn-warning" id="btnLess">&lArr;<br>меньше</button>
+                        <button class="btn btn-info btn-lg" id="btnEqual">Верно!</button>
+                        <button class="btn btn-danger" id="btnOver">больше<br>&rArr;</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-dark" id="btnRetry">Заново</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
