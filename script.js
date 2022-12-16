@@ -19,13 +19,12 @@ let m;
 
     
     Go.addEventListener('click',function () { 
-      minValue =((parseInt(min.value))<-999)?-999:parseInt(min.value)||0;
-       maxValue =(parseInt(max.value)>999)?999:parseInt(max.value)||100; 
+      minValue =parseInt(min.value)==0?0:((parseInt(min.value))<-999)?-999:parseInt(min.value)||-999;
+       maxValue =parseInt(max.value)==0?0:(parseInt(max.value)>999)?999:parseInt(max.value)|| 999 ; 
        document.querySelector('#minBorder').textContent = minValue ;
        document.querySelector('#maxBorder').textContent = maxValue ;  
-
-       if(minValue===maxValue||minValue===maxValue-1){
-       answerField.innerText =`Дипазон введен не корректно `;
+        if(minValue>=maxValue||minValue===maxValue-1){
+       answerField.innerText =`Дипазон введен не корректно \n ПРИМЕР : -10 ; 25 `;
        gameRun = false;
 }else {                  
         answerNumber  = Math.floor((minValue + maxValue) / 2);
